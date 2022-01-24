@@ -1,0 +1,20 @@
+.header__saved-news-link {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 0;
+    margin-left: 76px;
+    
+}
+
+@media (max-width: 832px) {
+    .header__saved-news-link {
+        margin-left: 16px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

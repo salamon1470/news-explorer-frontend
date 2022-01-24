@@ -1,0 +1,10 @@
+.result-not-found__message {
+    font-family: 'Roboto';
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #B6BCBF;
+    margin: 16px auto 80px;
+    max-width: 356px;
+}

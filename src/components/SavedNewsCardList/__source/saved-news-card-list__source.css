@@ -1,0 +1,26 @@
+.saved-news-card-list__source {
+    font-family: 'Roboto Slab';
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: #B6BCBF;
+    max-width: 352px;
+    margin: 0;
+    margin-left: 24px;
+    margin-bottom: 24px;
+    padding-top: 40px;
+}
+
+@media (max-width: 832px) {
+    .saved-news-card-list__source {
+        max-width: 192px;
+        margin-left: 16px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding-top: 12px;
+        margin-bottom: 16px;
+    }
+}

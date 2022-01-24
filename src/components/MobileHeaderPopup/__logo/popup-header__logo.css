@@ -1,0 +1,12 @@
+.popup-header__logo {
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin: 0;
+    margin-top: 16px;
+    margin-left: 16px;
+    max-width: 117px;
+}

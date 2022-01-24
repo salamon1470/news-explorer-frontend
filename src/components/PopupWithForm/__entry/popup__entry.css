@@ -1,0 +1,9 @@
+.popup__entry {
+    font-family: Inter;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    margin: 16px auto 28px;
+    max-width: 226px;
+}

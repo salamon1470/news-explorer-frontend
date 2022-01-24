@@ -1,0 +1,6 @@
+.search-results {
+    background: #F5F6F7;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}

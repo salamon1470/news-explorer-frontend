@@ -1,0 +1,29 @@
+.saved-news-card-list {
+    max-width: 1232px;
+    margin: 0 auto;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(400px, 1fr));
+    grid-template-rows: 1fr;
+    gap: 16px 16px;
+    padding: 0;
+    list-style: none;
+    padding-top: 62px;
+    padding-bottom: 62px;
+}
+
+@media (max-width: 832px) {
+    .saved-news-card-list {
+        max-width: 688px;
+        grid-template-columns: repeat( auto-fit, minmax(224px, 1fr));
+        gap: 8px 8px;
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+}
+
+@media (max-width: 608px) {
+    .saved-news-card-list {
+        
+    }
+}

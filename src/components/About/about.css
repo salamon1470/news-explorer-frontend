@@ -1,0 +1,23 @@
+.about {
+    display: flex;
+    row-gap: 56px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    margin-left: 104px;
+}
+
+@media (max-width: 1110px) {
+    .about {
+        margin-left: 40px;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 608px) {
+    .about {
+        row-gap: 0;
+        flex-direction: column;
+        width: 100%;
+        margin: 80px auto;
+    }
+}

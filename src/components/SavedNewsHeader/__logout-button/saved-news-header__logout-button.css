@@ -1,0 +1,39 @@
+.saved-news-header__logout-button {
+    margin-left: 42px;
+    margin-right: 104px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #1A1B22;
+    border: 1px solid #1A1B22;
+    border-radius: 100px;
+    background: url(/src/images/logout.png);
+    background-position-x: 80%;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    padding: 12px;
+    padding-left: 18px;
+    width: 112px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.saved-news-header__logout-button:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 832px) {
+    .saved-news-header__logout-button {
+        margin-left: 16px;
+        margin-right: 40px;
+    }
+}
+
+@media (max-width: 608px) {
+    .saved-news-header__logout-button {
+
+    }
+}

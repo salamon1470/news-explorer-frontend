@@ -1,0 +1,18 @@
+.header__home-link {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-bottom: 3px solid white;
+    padding: 0 10px 23px;
+}
+
+@media (max-width: 832px) {
+    .header__home-link {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

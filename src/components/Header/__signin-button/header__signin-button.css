@@ -1,0 +1,28 @@
+.header__signin-button {
+    margin-left: 42px;
+    margin-right: 104px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    border: 1px solid white;
+    border-radius: 25px;
+    background-color: transparent;
+    padding: 12px;
+    width: 178px;
+    box-sizing: border-box;
+}
+.header__signin-button:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 1110px) {
+    .header__signin-button {
+        margin-right: 40px;
+        margin-left: 16px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
