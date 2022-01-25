@@ -15,9 +15,6 @@
 
 .search-results__show-more:hover {
     cursor: pointer;
-}
-
-.search-results__show-more:active {
     background: #E8E8E8;
     opacity: 0.9;
 }

@@ -13,21 +13,21 @@
 
 @media (max-width: 832px) {
     .news-card-list {
-        max-width: 688px;
-        grid-template-columns: repeat( auto-fit, minmax(224px, 1fr));
+        width: 89.59%;
+        grid-template-columns: repeat( auto-fit, 224px);
         gap: 8px 8px;
         padding-top: 32px;
         padding-bottom: 32px;
+        justify-content: center;
     }
 }
 
 @media (max-width: 608px) {
     .news-card-list {
-        justify-content: center;
         width: 100%;
         grid-template-columns: 400px;
         gap: 8px 8px;
-        padding-top: 32px;
+        padding-top: 58px;
         padding-bottom: 32px;
     }
 }

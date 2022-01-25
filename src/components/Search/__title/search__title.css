@@ -12,12 +12,13 @@
         font-size: 36px;
         line-height: 40px;
         max-width: 385px;
-        margin: 0 auto;
+        margin: 0;
     }
 }
 
 @media (max-width: 608px) {
     .search__title {
         max-width: 90%;
+        margin: 0 auto;
     }
 }

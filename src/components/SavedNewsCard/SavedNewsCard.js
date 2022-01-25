@@ -19,7 +19,6 @@ function SavedNewsCard() {
               aria-label=""
               type="button"
               className="saved-news-card-list__button"
-              onClick=""
             >
             </button>
             <p className="saved-news-card-list__date">November 4, 2020</p>
@@ -37,7 +36,6 @@ function SavedNewsCard() {
               aria-label=""
               type="button"
               className="saved-news-card-list__button"
-              onClick=""
             >
             </button>
             <p className="saved-news-card-list__date">February 19, 2019</p>
@@ -55,7 +53,6 @@ function SavedNewsCard() {
               aria-label=""
               type="button"
               className="saved-news-card-list__button"
-              onClick=""
             >
             </button>
             <p className="saved-news-card-list__date">October 19, 2020</p>
@@ -73,7 +70,6 @@ function SavedNewsCard() {
               aria-label=""
               type="button"
               className="saved-news-card-list__button"
-              onClick=""
             >
             </button>
             <p className="saved-news-card-list__date">November 4, 2020</p>
@@ -91,7 +87,6 @@ function SavedNewsCard() {
               aria-label=""
               type="button"
               className="saved-news-card-list__button"
-              onClick=""
             >
             </button>
             <p className="saved-news-card-list__date">March 16, 2020</p>

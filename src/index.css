@@ -57,6 +57,11 @@
 @import url(components/PopupWithForm/__entry/popup__entry.css);
 @import url(components/SigninPopup/__signup-link/popup-signin__signup-link.css);
 @import url(components/SignupPopup/__signin-link/popup-signup__signin-link.css);
+@import url(components/SignupSuccess/SignupSuccess.css);
+@import url(components/SignupSuccess/__close-btn/signup-success__close-btn.css);
+@import url(components/SignupSuccess/__title/signup-success__title.css);
+@import url(components/SignupSuccess/__submit-btn/signup-success__submit-btn.css);
+@import url(components/SignupSuccess/__entry/signup-success__entry.css);
 @import url(components/SavedNewsHeader/saved-news-header.css);
 @import url(components/SavedNewsHeader/__logo/saved-news-header__logo.css);
 @import url(components/SavedNewsHeader/__menu/saved-news-header__menu.css);

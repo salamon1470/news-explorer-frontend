@@ -8,12 +8,40 @@ function SignupPopup(props) {
   const [password, setPassword] = React.useState("");
   const [username, setUsername] = React.useState("");
 
+  function handleValidateEmail() {
+    const emailInput = document.getElementById("signup-email")
+    const errorEmailElement = document.getElementById("signup-email-error");
+    errorEmailElement.textContent = emailInput.validationMessage;
+    errorEmailElement.classList.add("popup__input-errorMessage");
+    if (!emailInput.validity.valid) {
+      emailInput.classList.add("popup__input_border_error")
+    } else {
+      emailInput.classList.remove("popup__input_border_error");
+      errorEmailElement.classList.remove("popup__input-errorMessage");
+    }
+  }
+
+  function handleValidatePassword() {
+    const passwordInput = document.getElementById("signup-password")
+    const errorPasswordElement = document.getElementById("signup-password-error");
+    errorPasswordElement.textContent = passwordInput.validationMessage;
+    errorPasswordElement.classList.add("popup__input-errorMessage");
+    if (!passwordInput.validity.valid) {
+      passwordInput.classList.add("popup__input_border_error")
+    } else {
+      passwordInput.classList.remove("popup__input_border_error");
+      errorPasswordElement.classList.remove("popup__input-errorMessage");
+    }
+  }
+
   function handleEmailChange(e) {
     setEmail(e.target.value);
+    handleValidateEmail()
   }
 
   function handlePasswordChange(e) {
     setPassword(e.target.value);
+    handleValidatePassword()
   }
 
   function handleUsernameChange(e) {
@@ -28,12 +56,7 @@ function SignupPopup(props) {
 
   function handleSignupSubmit(e) {
     e.preventDefault();
-
-    props.onSignup({
-      email: email,
-      password: password,
-      username: username,
-    });
+    props.onSignupSubmit();
   }
 
   return (
@@ -44,8 +67,10 @@ function SignupPopup(props) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSignupSubmit}
-      buttonClass="Signup__submit-btn"
+      buttonClass="popup__submit-btn"
       buttonText="Sign up"
+      closeButtonClass="popup__close-btn"
+      entryClass="popup__entry"
       linkClass="signup__signin-link"
       linkText="Sign in"
       onClick={props.onSigninClick}
@@ -54,7 +79,7 @@ function SignupPopup(props) {
     <input
     type="email"
     name="email"
-    id="Signup-email"
+    id="signup-email"
     value={email}
     onChange={handleEmailChange}
     className="popup__input popup-add__input"
@@ -64,7 +89,7 @@ function SignupPopup(props) {
     maxLength="30"
     />
     <div className="errorContainer">
-    <span id="email-error" className="popup__input-errorMessage"></span>
+    <span id="signup-email-error" className="popup__input-errorMessage"></span>
     </div>
     <p className="popup__input-password-title">Password</p>
     <input
@@ -79,7 +104,7 @@ function SignupPopup(props) {
     />
     <div className="errorContainer">
     <span
-        id="password-error"
+        id="signup-password-error"
         className="popup__input-errorMessage"
     ></span>
     </div>
@@ -87,7 +112,7 @@ function SignupPopup(props) {
     <input
     type="text"
     name="name"
-    id="Signup-username"
+    id="signup-username"
     value={username}
     onChange={handleUsernameChange}
     className="popup__input popup-Signup__input"

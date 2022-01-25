@@ -65,8 +65,10 @@ function SigninPopup(props) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSigninSubmit}
-      buttonClass="signin__submit-btn"
+      buttonClass="popup__submit-btn"
       buttonText="Sign in"
+      closeButtonClass="popup__close-btn"
+      entryClass="popup__entry"
       linkClass="signin__signup-link"
       linkText="Sign up"
       onClick={props.onSignupClick}

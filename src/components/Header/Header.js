@@ -22,7 +22,7 @@ function Header(props) {
       <p className="header__logo">{props.headerLogoText}</p>
       <button className="header__menu" onClick={handleHeaderPopup}/>
       <MobileHeaderPopup onSigninClick={props.onSigninClick} submitText={"Sign in"} name="header" isOpen={isHeaderPopupOpen} headerLogoText={"NewsExplorer"} headerHomeLink={"/home"} headerHomeLinkClass={"popup-header__home-link"} headerHomeLinkText={"Home"} headerSavedLink={"/saved-news"} headerSavedLinkClass={"popup-header__saved-news-link"} headerSavedLinkText={"Saved Articles"} onClose={closeHeaderPopup} />
-      <div className="header__container">
+      <nav className="header__container">
         <Link to={props.headerHomeLink} className={props.headerHomeLinkClass}>
             {props.headerHomeLinkText}
         </Link>
@@ -35,7 +35,7 @@ function Header(props) {
         className="header__signin-button"
         onClick={props.onSigninClick}
         >Sign in</button>
-      </div> 
+      </nav> 
     </header>
   );
 }

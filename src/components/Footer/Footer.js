@@ -5,7 +5,7 @@ function Footer(props) {
     return (
         <footer className="footer">
             <p className="footer__copyright">&copy; 2022 Supersite, Powered by News API</p>
-            <div className="footer__navbar">
+            <nav className="footer__navbar">
                 <div className="footer__navbar-links">
                     <a href="/home" className="footer__navbar-links-home">{props.footerNavbarHomeLink}</a>
                     <a target="_blank" href="https://practicum.yandex.com/" className="footer__navbar-links-practicum" rel="noreferrer">{props.footerNavbarPracticumLink}</a>
@@ -18,7 +18,7 @@ function Footer(props) {
                         <img src={facebook} alt="Facebook link"></img>
                     </a>
                 </div>
-            </div>
+            </nav>
         </footer>
     )
 }

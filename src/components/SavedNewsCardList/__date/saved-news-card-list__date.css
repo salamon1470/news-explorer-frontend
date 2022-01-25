@@ -17,3 +17,13 @@
         margin-left: 16px;
     }
 }
+
+@media (max-width: 608px) {
+    .saved-news-card-list__date {
+        display: flex;
+        margin: 16px auto 0;
+        font-size: 18px;
+        line-height: 24px;
+        max-width: 90%;
+    }
+}

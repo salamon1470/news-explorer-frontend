@@ -1,5 +1,5 @@
 .home {
-    width: 100%;
+    max-width: 1440px;
     margin: 0 auto;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -8,4 +8,10 @@
     -moz-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
     position: relative;
+}
+
+@media (max-width: 832px) {
+    .home {
+        width: 100%;
+    }
 }

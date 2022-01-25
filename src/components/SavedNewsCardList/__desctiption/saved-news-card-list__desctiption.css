@@ -24,3 +24,11 @@
         margin-top: 10px;
     }
 }
+
+@media (max-width: 608px) {
+    .saved-news-card-list__desctiption {
+        margin: 10px auto 0;
+        -webkit-line-clamp: 4;
+        max-width: 90%;
+    }
+}

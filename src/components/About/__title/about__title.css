@@ -11,13 +11,6 @@
 @media (max-width: 832px) {
     .about__title {
         margin: 0;
-    }
-}
-
-
-@media (max-width: 320px) {
-    .about__title{
-        margin: 0;
         font-size: 30px;
         line-height: 40px;
     }

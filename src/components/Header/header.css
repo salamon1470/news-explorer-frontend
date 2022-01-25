@@ -1,9 +1,10 @@
 .header {
-    width: 100%;
+    max-width: 1440px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 30px auto 0px;
+    margin: 0;
+    margin-top: 30px;
     background: rgba(196, 196, 196, 0.01);
     box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
     padding-bottom: 13px;

@@ -11,10 +11,25 @@
     color: #1A1B22;
 }
 
+@media (max-width: 832px) {
+    .search-results__title{
+        margin-left: 40px;
+        max-width: 336px;
+        margin-bottom: 0;
+    }
+}
+
 @media (max-width: 608px) {
     .search-results__title{
         width: 90%;
-        margin: 0 auto 58px;
+        padding-top: 32px;
+    }
+}
+
+@media (max-width: 410px) {
+    .search-results__title{
+        width: 90%;
+        margin: 0 auto;
         padding-top: 32px;
     }
 }

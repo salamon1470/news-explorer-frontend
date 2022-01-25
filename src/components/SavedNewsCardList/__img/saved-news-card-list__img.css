@@ -9,3 +9,9 @@
         max-width: 224px;
     }
 }
+
+@media (max-width: 608px) {
+    .saved-news-card-list__img {
+        max-width: 100%;
+    }
+}

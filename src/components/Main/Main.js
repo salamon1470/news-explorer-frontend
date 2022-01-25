@@ -18,6 +18,9 @@ function Main(props) {
         preloader.setAttribute("style", "display: none;");
         notFound.setAttribute("style", "display: block;");
       }, 2000);
+      if (preloader.hasAttributes("style", "display: block;")) {
+        notFound.setAttribute("style", "display: none;")
+      }
       return () => clearTimeout(timer);
   }
 

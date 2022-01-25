@@ -13,3 +13,15 @@
        max-width: 224px;
     }
 }
+
+@media (max-width: 608px) {
+    .saved-news-card-list__item {
+       max-width: 100%;
+    }
+}
+
+@media (max-width: 410px) {
+    .saved-news-card-list__item {
+       max-width: 288px;
+    }
+}

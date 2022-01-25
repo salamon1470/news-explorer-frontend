@@ -4,6 +4,12 @@
     text-align: center;
 }
 
+@media (max-width: 832px) {
+    .footer__navbar-links {
+        margin-right: 25.89px;
+    }
+}
+
 @media (max-width: 608px) {
     .footer__navbar-links {
         max-width: 200px;

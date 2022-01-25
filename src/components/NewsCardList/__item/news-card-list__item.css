@@ -19,3 +19,9 @@
        max-width: 100%;
     }
 }
+
+@media (max-width: 410px) {
+    .news-card-list__item {
+       max-width: 288px;
+    }
+}

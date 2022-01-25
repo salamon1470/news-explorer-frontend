@@ -35,7 +35,7 @@ useEffect(() => {
           <button
             aria-label=""
             type="button"
-            className="popup__close-btn"
+            className={props.closeButtonClass}
             onClick={onClose}
           ></button>
 
@@ -45,11 +45,11 @@ useEffect(() => {
             aria-label=""
             id={props.name}
             type="submit"
-            className= "popup__submit-btn"
+            className= {props.buttonClass}
             >
               {props.buttonText}
             </button>
-            <p className="popup__entry">
+            <p className={props.entryClass}>
               or
               <button type="button" className={`popup-${props.linkClass}`} onClick={props.onClick}>
                 {props.linkText}

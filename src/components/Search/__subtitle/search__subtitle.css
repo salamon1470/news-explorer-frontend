@@ -11,7 +11,7 @@
 @media (max-width: 832px) {
     .search__subtitle {
         max-width: 452px;
-        margin-left: 66px;
+        margin-left: 0;
     }
 }
 
@@ -19,5 +19,11 @@
     .search__subtitle {
         max-width: 90%;
         margin: 32px auto 0;
+    }
+}
+
+@media (max-width: 410px) {
+    .search__subtitle {
+        margin-top: 16px;
     }
 }
