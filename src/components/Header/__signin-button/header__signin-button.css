@@ -1,7 +1,7 @@
 .header__signin-button {
     margin-left: 42px;
     margin-right: 104px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', 'system';
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;

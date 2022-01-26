@@ -13,10 +13,8 @@ function App() {
         <SavedNewsHeader
           savedNewsLogoText={"NewsExplorer"}
           savedNewsHomeLink={"/home"}
-          savedNewsHomeLinkClass={"saved-news-header__home-link"}
           headerHomeLinkText={"Home"}
           savedNewsSavedLink={"/saved-news"}
-          savedNewsSavedLinkClass={"saved-news-header__saved-news-link"}
           savedNewsSavedLinkText={"Saved Articles"}
         />
         <SavedNews />

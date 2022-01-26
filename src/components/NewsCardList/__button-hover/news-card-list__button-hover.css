@@ -1,0 +1,18 @@
+.news-card-list__button-hover {
+    display: none;
+    text-align: center;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Roboto', 'system';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    position: absolute;
+    right: 45px;
+    padding: 11px 20px;
+    margin: 0;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 10px 22px rgba(59, 74, 116, 0.1);
+}

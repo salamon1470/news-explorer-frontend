@@ -1,7 +1,7 @@
 .popup-header__signin-button {
     margin: 22px auto 24px;
     margin-left: 16px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', 'system';
     font-weight: 500;
     font-size: 18px;
     line-height: 56px;

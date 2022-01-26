@@ -1,5 +1,5 @@
 .saved-news-card-list__desctiption {
-    font-family: 'Roboto';
+    font-family: 'Roboto', 'system';
     font-weight: normal;
     font-size: 16px;
     line-height: 22px;
@@ -20,8 +20,15 @@
         max-width: 192px;
         margin-left: 16px;
         text-overflow: ellipsis;
-        max-height: 88px;
         margin-top: 10px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 767px) {
+    .saved-news-card-list__desctiption {
+        max-width: 90%;
     }
 }
 

@@ -6,7 +6,7 @@ function About(props) {
             <div className="about__container">
                 <h2 className="about__title">{props.aboutTitle}</h2>
                 <p className="about__description">{props.aboutDescription}</p>
-                <p className="about__expertise">{props.aboutExpertise}</p>
+                <p className="about__description">{props.aboutExpertise}</p>
             </div>
         </section>
       );

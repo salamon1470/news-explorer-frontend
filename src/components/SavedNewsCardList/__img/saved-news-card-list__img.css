@@ -1,17 +1,5 @@
 .saved-news-card-list__img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    max-width: 400px;
-}
-
-@media (max-width: 832px) {
-    .saved-news-card-list__img {
-        max-width: 224px;
-    }
-}
-
-@media (max-width: 608px) {
-    .saved-news-card-list__img {
-        max-width: 100%;
-    }
+    width: 100%;
 }

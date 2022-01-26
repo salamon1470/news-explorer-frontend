@@ -30,7 +30,7 @@ function Main(props) {
   return (
     <main className="main">
       <CurrentUserContext.Provider value={currentUser}>
-        <Header headerLogoText={"NewsExplorer"} headerHomeLink={"/home"} headerHomeLinkClass={"header__home-link"} headerHomeLinkText={"Home"} headerSavedLink={"/saved-news"} headerSavedLinkClass={"header__saved-news-link"} headerSavedLinkText={"Saved Articles"} onSigninClick={props.onSigninClick} />
+        <Header headerLogoText={"NewsExplorer"} headerHomeLink={"/home"} headerHomeLinkText={"Home"} headerSavedLink={"/saved-news"} headerSavedLinkText={"Saved Articles"} onSigninClick={props.onSigninClick} />
         <Search searchTitle={"What's going on in the world?"} searchSubtitle={"Find the latest news on any topic and save them in your personal account."} searchPlaceholder={"Enter topic"} searchButtonText={"Search"} onSearchSubmit={handleSearchSubmit} />
       </CurrentUserContext.Provider>
     </main>

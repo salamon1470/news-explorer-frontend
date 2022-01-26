@@ -1,14 +1,21 @@
 .search-results__title {
-    max-width: 712px;
-    margin: 0;
+    width: 90%;
+    margin: 0 auto;
     padding-top: 80px;
-    margin-left: 104px;
     margin-bottom: 64px;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', 'system';
     font-weight: normal;
     font-size: 40px;
     line-height: 46px;
     color: #1A1B22;
+}
+
+@media (max-width: 832px) {
+    .search-results__title{
+        margin-left: 40px;
+        max-width: 336px;
+        margin-bottom: 0;
+    }
 }
 
 @media (max-width: 832px) {

@@ -1,0 +1,13 @@
+.header__home-link_selected {
+    border-bottom: 3px solid white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 23px;
+    margin-right: 66px;
+}
+
+@media (max-width: 832px) {
+    .header__home-link_selected {
+        margin-right: 16px;
+    }
+}
