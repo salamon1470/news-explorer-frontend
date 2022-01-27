@@ -1,0 +1,27 @@
+.signup-success__close-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    position: absolute;
+    z-index: 10;
+    top: -23.5%;
+    right: -11%;
+    padding: 0;
+    background: url(../../../images/x.png) no-repeat center; 
+    cursor: pointer;
+    transition: opacity 0.5s linear;
+    background-size: contain;
+}
+
+.signup-success__close-btn:hover {
+    opacity: 0.6;
+}
+
+@media (max-width: 608px) {
+    .signup-success__close-btn {
+        top: -6%;
+        right: 3%;
+        width: 26px;
+        height: 26px;
+    }
+}

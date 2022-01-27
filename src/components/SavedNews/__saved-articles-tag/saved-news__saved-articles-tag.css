@@ -1,0 +1,26 @@
+.saved-news__saved-articles-tag {
+    font-family: 'Roboto', 'system';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    max-width:  712px;
+    margin: 0;
+    margin-top: 40px;
+    margin-left: 104px;
+    color: rgba(26, 27, 34, 0.5);
+}
+
+@media (max-width: 832px) {
+    .saved-news__saved-articles-tag{
+        margin-left: 40px;
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 608px) {
+    .saved-news__saved-articles-tag {
+        margin-left: 16px;
+        font-size: 12px;
+    }
+}

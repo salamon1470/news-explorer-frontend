@@ -1,0 +1,9 @@
+.saved-news-header__saved-news-link {
+    font-family: 'Roboto', 'system', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #1A1B22;
+    text-decoration: none;
+}

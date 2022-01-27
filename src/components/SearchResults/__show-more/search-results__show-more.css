@@ -1,0 +1,21 @@
+.search-results__show-more {
+    background: white;
+    border-radius: 80px;
+    max-width: 288px;
+    margin: 0 auto 80px;
+    font-family: 'Roboto', 'system';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #1A1B22;
+    border: none;
+    padding: 20px 98px 20px 98px;
+}
+
+.search-results__show-more:hover {
+    cursor: pointer;
+    background: #E8E8E8;
+    opacity: 0.9;
+}
+

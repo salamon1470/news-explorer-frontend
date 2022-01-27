@@ -1,0 +1,15 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto 26px;
+    align-items: center;
+    max-width: 1440px;
+}
+
+@media (max-width: 608px) {
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+}

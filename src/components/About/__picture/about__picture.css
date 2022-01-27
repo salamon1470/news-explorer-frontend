@@ -1,0 +1,19 @@
+.about__picture {
+    margin-right: 56px;
+}
+
+@media (max-width: 832px) {
+    .about__picture {
+        width: 232px;
+        height: 232px;
+        margin-right: 32px;
+    }
+}
+
+@media (max-width: 608px) {
+    .about__picture {
+        width: 85%;
+        height: 85%;
+        margin: 0 auto;
+    }
+}

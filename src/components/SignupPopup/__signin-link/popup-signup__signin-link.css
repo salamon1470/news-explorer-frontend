@@ -1,0 +1,11 @@
+.popup-signup__signin-link {
+    color: #2F71E5;
+    border: none;
+    background-color: transparent;
+    transition: opacity 0.5s linear;
+}
+
+.popup-signup__signin-link:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}

@@ -1,0 +1,17 @@
+.footer__navbar-links-home {
+    text-decoration: none;
+    display: inline-block;
+    width: 110px;
+    font-family: 'Roboto', 'system';
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: black;
+    text-align: center;
+}
+
+@media (max-width: 608px) {
+    .footer__navbar-links-home {
+        text-align: left;
+    }
+}

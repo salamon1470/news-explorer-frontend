@@ -1,0 +1,15 @@
+.about__description {
+    font-family: 'Roboto', 'system';
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B22;
+    margin: 0;
+    margin-top: 24px;
+}
+
+@media (max-width: 608px) {
+    .about__description{
+        margin-top: 16px;
+    }
+}

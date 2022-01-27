@@ -1,0 +1,16 @@
+.popup__input-email-title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #2F71E5;
+    width: calc(100% - 36px * 2);
+    margin: 0 auto 9px;
+}
+
+@media (max-width: 608px) {
+    .popup__input-email-title {
+        width: 90%;
+    }
+}

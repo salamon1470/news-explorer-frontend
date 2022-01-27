@@ -1,0 +1,11 @@
+.saved-news-header__saved-news-link_selected {
+    border-bottom: 3px solid #1A1B22;;
+    padding: 0 31px 23px;
+    margin-left: 40px;
+}
+
+@media (max-width: 832px) {
+    .saved-news-header__saved-news-link_selected {
+        margin-left: 16px;
+    }
+}

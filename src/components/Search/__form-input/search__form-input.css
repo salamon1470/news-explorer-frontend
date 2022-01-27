@@ -1,0 +1,30 @@
+.search__form-input {
+    flex-grow:2;
+    border:none;
+    padding: 0;
+    font-family: 'Roboto', 'system';
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    border: none;
+    border-radius: 100px;
+    max-width: 376px;
+    padding: 21px;
+    padding-left: 24px;
+    padding-right: 40px;
+}
+
+.search__form-input:focus {
+    outline: none;
+}
+.search__form-input::placeholder {
+    color: #B6BCBF;
+    opacity: 1;
+  }
+
+@media (max-width: 608px) {
+    .search__form-input {
+        max-width: 100%;
+        padding: 16px;
+    }
+}
