@@ -1,0 +1,6 @@
+.news-card-list__button_marked {
+    background: url("../../../../images/bookmarkmrk.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+}

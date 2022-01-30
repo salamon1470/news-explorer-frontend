@@ -5,7 +5,7 @@
     right: 15px;
     width: 226px;
     height: 40px;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .news-card-list__button-contanier:hover{

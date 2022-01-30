@@ -10,17 +10,16 @@
     border: 1px solid #1A1B22;
     border-radius: 100px;
     background: url(/src/images/logout.png);
-    background-position-x: 80%;
+    background-position-x: 90%;
     background-position-y: 50%;
     background-repeat: no-repeat;
     background-color: transparent;
     padding: 12px;
-    padding-left: 18px;
-    width: 112px;
+    padding-left: 22px;
+    width: 178px;
     box-sizing: border-box;
     text-align: left;
 }
-
 .saved-news-header__logout-button:hover {
     cursor: pointer;
 }

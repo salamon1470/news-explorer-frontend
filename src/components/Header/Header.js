@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react/cjs/react.development";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import MobileHeaderPopup from "../MobileHeaderPopup/MobileHeaderPopup";
 
 function Header(props) {
@@ -22,14 +23,21 @@ function Header(props) {
 
   useEffect(() => {
     const currentURL = window.location.href
-    console.log(currentURL)
-    if (currentURL === "http://localhost:3000/home") {
+    if (currentURL === "http://localhost:3000/home" || currentURL === "http://localhost:3000/") {
       setIsSavedRoute(false);
       setIsHomeRoute(true);
     }
-  })
-  
+  }, [])
 
+  const currentUser = React.useContext(CurrentUserContext)
+
+  function handleEntry() {
+    if (props.loggedin) {
+      props.onSignOutClick();
+    }
+    props.onSigninClick();
+  }
+  
 
   return (
     <header className="header">
@@ -40,15 +48,15 @@ function Header(props) {
         <Link to={props.headerHomeLink} className={`header__home-link ${isHomeRoute ?  "header__home-link_selected":""}`}>
             {props.headerHomeLinkText}
         </Link>
-        <Link to={props.headerSavedLink} className={`header__home-link ${isSavedRoute ?  "header__home-link_selected":""}`}>
+        <Link to={props.headerSavedLink} className={`${props.loggedin ? `header__home-link ${isSavedRoute ? "header__home-link_selected":""}` : "header__home-link_hide" }`}>
             {props.headerSavedLinkText}
         </Link>
         <button
         aria-label=""
         type="button"
-        className="header__signin-button"
-        onClick={props.onSigninClick}
-        >Sign in</button>
+        className={`header__signin-button ${props.loggedin ? "header__signin-button_logged-in" : ""}`}
+        onClick={handleEntry}
+        >{`${props.loggedin ? currentUser.name : "Sign in"} `}</button>
       </nav> 
     </header>
   );

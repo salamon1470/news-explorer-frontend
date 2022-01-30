@@ -1,0 +1,14 @@
+.saved-news-card-list__button-contanier {
+    display: flex;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    width: 50px;
+    height: 40px;
+    justify-content: flex-end;
+}
+
+.saved-news-card-list__button-contanier:hover {
+    cursor: pointer;
+    width: 226px;
+}

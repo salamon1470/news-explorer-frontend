@@ -8,6 +8,10 @@
     position: relative;
 }
 
+.news-card-list__item:nth-child(n+4) {
+    display: none;
+}
+
 @media (max-width: 410px) {
     .news-card-list__item {
        max-width: 288px;

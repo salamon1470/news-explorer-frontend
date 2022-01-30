@@ -19,10 +19,3 @@
     background-color: white;
     cursor: pointer;
 }
-
-.news-card-list__button:focus {
-    background: url("../../../images/bookmarkmrk.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: white;
-}

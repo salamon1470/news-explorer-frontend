@@ -1,31 +1,20 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Footer from "../Footer/Footer";
 import Home from "../Home/Home";
-import SavedNews from "../SavedNews/SavedNews";
-import SavedNewsCards from "../SavedNewsCards/SavedNewsCards";
-import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import SavedNewsHome from "../SavedNewsHome/SavedNewsHome";
 
 function App() {
+
+  const [loggedIn, setLoggedIn] = React.useState(false);
+
   return (
     <Switch>
-      <Route path="/saved-news">
-        <SavedNewsHeader
-          savedNewsLogoText={"NewsExplorer"}
-          savedNewsHomeLink={"/home"}
-          headerHomeLinkText={"Home"}
-          savedNewsSavedLink={"/saved-news"}
-          savedNewsSavedLinkText={"Saved Articles"}
-        />
-        <SavedNews />
-        <SavedNewsCards />
-        <Footer
-          footerNavbarHomeLink={"Home"}
-          footerNavbarPracticumLink={"Practicum by Yandex"}
-        />
-      </Route>
+      <ProtectedRoute path="/saved-news" loggedIn={loggedIn} component={SavedNewsHome}>
+        <SavedNewsHome setLoggedIn={setLoggedIn}/>
+      </ProtectedRoute>
       <Route path="/">
-        <Home />
+        <Home setLoggedIn={setLoggedIn} loggedIn={loggedIn}/>
       </Route>
     </Switch>
   );

@@ -9,17 +9,16 @@
     margin-left: 24px;
     max-width: 352px;
     overflow: hidden;
+    display: -webkit-box; 
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;
     text-overflow: ellipsis;
 }
 
 @media (max-width: 832px) {
     .news-card-list__desctiption {
-        display: -webkit-box; 
-        -webkit-line-clamp: 4; 
-        -webkit-box-orient: vertical;
         max-width: 192px;
         margin-left: 16px;
-        text-overflow: ellipsis;
         margin-top: 10px;
         font-size: 16px;
         line-height: 22px;

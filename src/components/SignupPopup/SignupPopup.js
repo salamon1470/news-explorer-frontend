@@ -1,5 +1,6 @@
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import React, { useEffect } from "react";
+import mainapi from "../../utils/MainApi";
 
 function SignupPopup(props) {
   const { isOpen, onClose } = props;
@@ -9,7 +10,7 @@ function SignupPopup(props) {
   const [username, setUsername] = React.useState("");
 
   function handleValidateEmail() {
-    const emailInput = document.getElementById("signup-email")
+    const emailInput = document.getElementById("signup-email");
     const errorEmailElement = document.getElementById("signup-email-error");
     errorEmailElement.textContent = emailInput.validationMessage;
     errorEmailElement.classList.add("popup__input-errorMessage");
@@ -22,7 +23,7 @@ function SignupPopup(props) {
   }
 
   function handleValidatePassword() {
-    const passwordInput = document.getElementById("signup-password")
+    const passwordInput = document.getElementById("signup-password");
     const errorPasswordElement = document.getElementById("signup-password-error");
     errorPasswordElement.textContent = passwordInput.validationMessage;
     errorPasswordElement.classList.add("popup__input-errorMessage");
@@ -52,11 +53,32 @@ function SignupPopup(props) {
     setEmail('');
     setPassword('');
     setUsername('');
+    const errorEmailElement = document.getElementById("signup-email-error");
+    errorEmailElement.textContent = ""
+    const emailInput = document.getElementById("signup-email")
+    emailInput.classList.remove("popup__input_border_error");
+    const passwordInput = document.getElementById("signup-password");
+    const errorPasswordElement = document.getElementById("signup-password-error");
+    errorPasswordElement.textContent = "";
+    passwordInput.classList.remove("popup__input_border_error");
 }, [isOpen]);
 
   function handleSignupSubmit(e) {
     e.preventDefault();
-    props.onSignupSubmit();
+    mainapi.register(email, password, username)
+    .then((res) => {
+      if (res.status === 201) {
+        props.onSignupSuccess();
+      }
+    })
+    .catch((err) => {
+      if (err === "Error: 409") {
+        const errorEmailElement = document.getElementById("signup-email-error");
+        errorEmailElement.classList.add("popup__input-errorMessage");
+        errorEmailElement.textContent = "User already exists";
+      }
+      console.log(err);
+    })
   }
 
   return (
@@ -95,7 +117,7 @@ function SignupPopup(props) {
     <input
     type="password"
     name="password"
-    id="Signup-password"
+    id="signup-password"
     value={password}
     onChange={handlePasswordChange}
     className="popup__input popup-Signup__input"

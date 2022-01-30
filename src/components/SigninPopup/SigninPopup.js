@@ -1,11 +1,14 @@
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import React, { useEffect } from "react";
+import mainapi from "../../utils/MainApi";
+import { useHistory } from "react-router-dom";
 
 function SigninPopup(props) {
   const { isOpen, onClose } = props;
 
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const history = useHistory();
 
   function handleValidateEmail() {
     const emailInput = document.getElementById("signin-email")
@@ -46,16 +49,59 @@ function SigninPopup(props) {
   useEffect(() => {
     setEmail('');
     setPassword('');
+    const errorEmailElement = document.getElementById("email-error");
+    errorEmailElement.textContent = ""
+    const emailInput = document.getElementById("signin-email")
+    emailInput.classList.remove("popup__input_border_error");
+    const passwordInput = document.getElementById("signin-password");
+    const errorPasswordElement = document.getElementById("password-error");
+    errorPasswordElement.textContent = "";
+    passwordInput.classList.remove("popup__input_border_error");
 }, [isOpen]);
 
-  function handleSigninSubmit(e) {
+  function handleLoginSubmit(e) {
     e.preventDefault();
+    mainapi.login(email, password)
+    .then((data) => {
+      if (data.token) {
+        localStorage.setItem('jwt', data.token);
+        onClose();
+        props.setLoggedIn(true);
+        history.push(
+          '/home'); 
+        return data;
+      } else {
+        return;
+      }
+    })
+    .catch((err) => {
+      if (err === "Error: 401") {
+        const errorEmailElement = document.getElementById("email-error");
+        errorEmailElement.classList.add("popup__input-errorMessage");
+        errorEmailElement.textContent = "Incorrect email or password";
+        const errorPasswordElement = document.getElementById("password-error");
+        errorPasswordElement.textContent = "Incorrect email or password";
+        errorPasswordElement.classList.add("popup__input-errorMessage");
+      }
+      console.log(err);
+    })
+  };
 
-    props.onSignin({
-      email: email,
-      password: password,
-    });
-  }
+  useEffect(() => {
+    const jwt = localStorage.getItem('jwt');
+    if (jwt) {
+      mainapi.checkToken(jwt)
+      .then((res) => {
+        props.setLoggedIn(true);
+        history.push(
+          '/home'); 
+        return res;
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    }
+  }, [props, props.setLoggedIn, history, localStorage])
 
   return (
     <PopupWithForm
@@ -64,7 +110,7 @@ function SigninPopup(props) {
       titleClass="popup__title"
       isOpen={isOpen}
       onClose={onClose}
-      onSubmit={handleSigninSubmit}
+      onSubmit={handleLoginSubmit}
       buttonClass="popup__submit-btn"
       buttonText="Sign in"
       closeButtonClass="popup__close-btn"
@@ -76,7 +122,7 @@ function SigninPopup(props) {
     <p className="popup__input-email-title">Email</p>
     <input
     type="email"
-    name="name"
+    name="email"
     id="signin-email"
     value={email}
     onChange={handleEmailChange}
@@ -95,7 +141,7 @@ function SigninPopup(props) {
     <p className="popup__input-password-title">Password</p>
     <input
     type="password"
-    name="link"
+    name="password"
     id="signin-password"
     value={password}
     onChange={handlePasswordChange}
