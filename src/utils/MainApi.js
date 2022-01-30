@@ -22,11 +22,15 @@ class MainApi {
 
     addArticle(article) {
         const searchInput = document.querySelector(".search__form-input").value;
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+        const searchCap = capitalizeFirstLetter(searchInput);
         return customFetch(`${this._baseUrl}/articles`, {
             headers: this._headers,
             method: "POST",
             body: JSON.stringify({
-                keyword: searchInput,
+                keyword: searchCap,
                 title: article.title,
                 text: article.description,
                 date: article.publishedAt,
