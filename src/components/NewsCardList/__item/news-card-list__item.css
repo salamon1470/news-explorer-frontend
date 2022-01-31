@@ -6,11 +6,9 @@
     border-bottom-right-radius: 10px;
     width: 100%;
     position: relative;
-}
-
-.news-card-list__item:nth-child(n+4) {
     display: none;
 }
+
 
 @media (max-width: 410px) {
     .news-card-list__item {

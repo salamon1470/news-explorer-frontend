@@ -27,7 +27,7 @@ function NewsCard(props) {
 
     return (
 
-          <li className="news-card-list__item">
+          <li className={`news-card-list__item ${props.isListItemVisible ? "news-card-list__item_visible" : ""}`}>
             <img
               className="news-card-list__img"
               src={`${isMarked ? article.image : article.urlToImage}`}

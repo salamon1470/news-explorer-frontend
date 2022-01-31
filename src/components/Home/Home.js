@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import About from "../About/About";
@@ -20,16 +20,19 @@ function Home(props) {
     const [articles, setArticles] = React.useState([]);
     const [isNotFound, setIsNotFound] = React.useState(false);
     const [currentUser, setCurrentUser] = React.useState({});
-
+    const [isHeaderPopupOpen, setIsHeaderPopupOpen] = React.useState(false);
+    const [isPreloaderVisible, setIsPreloaderVisible] = React.useState(false);
+    const [isResultsVisible, setIsResultsVisible] = React.useState(false);
+    const [isNotFoundVisible, setIsNotFoundVisible] = React.useState(false);
+    const [itemListCounter, setItemListCounter] = React.useState(3)
     
 
     function handleSigninClick() {
-      const headerPopup = document.querySelector(".popup-header");
         setIsSigninPopupOpen(true);
         setIsSignupPopupOpen(false);
         setIsSignupSuccessOpen(false);
-        if (headerPopup.classList.contains("popup_visible")) {
-          headerPopup.classList.remove("popup_visible");
+        if (isHeaderPopupOpen === true) {
+          setIsHeaderPopupOpen(false);
         }
     }
 
@@ -42,47 +45,46 @@ function Home(props) {
       setIsSignupSuccessOpen(true);
       setIsSignupPopupOpen(false);
     }
+
+    function handleHeaderPopup() {
+      setIsHeaderPopupOpen(true);
+    }
       
     function closeAllPopups() {
       setIsSigninPopupOpen(false);
       setIsSignupPopupOpen(false);
       setIsSignupSuccessOpen(false);
+      setIsHeaderPopupOpen(false);
     }
 
-    // const results = document.querySelector(".search-results");
-    // const preloader = document.querySelector(".preloader");
-    // const notFound = document.querySelector(".result-not-found");
-    // preloader.setAttribute("style", "display: block;");
-    // results.setAttribute("style", "display: none;");
-
+    const inputRef = useRef({});
+    
 
     function handleSearchSubmit(e) {
       e.preventDefault();
-      const preloader = document.querySelector(".preloader");
-      const results = document.querySelector(".search-results");
-      const notFound = document.querySelector(".result-not-found");
-      const searchInput = document.querySelector(".search__form-input").value;
-      preloader.setAttribute("style", "display: block;");
-      notFound.setAttribute("style", "display: none;");
+      setIsPreloaderVisible(true);
+      setIsNotFoundVisible(false);
+      const searchInput = inputRef.current.value;
+      console.log(searchInput);
       newsapi.getNews(searchInput)
       .then((res) => {
-        preloader.setAttribute("style", "display: none;");
-        results.setAttribute("style", "display: flex;");
+        setIsPreloaderVisible(false);
+        setIsResultsVisible(true);
         setArticles(res.articles);
         setIsNotFound(false);
         if ( res.articles.length === 0 ) {
           setIsNotFound(true);
-          preloader.setAttribute("style", "display: none;");     
-          results.setAttribute("style", "display: none;");
-          notFound.setAttribute("style", "display: block;");
+          setIsPreloaderVisible(false);    
+          setIsResultsVisible(false);
+          setIsNotFoundVisible(true);
         }
         
       })
       .catch((err) => {
         if (err === "Error: 400") {
-          preloader.setAttribute("style", "display: none;");     
-          results.setAttribute("style", "display: none;");
-          notFound.setAttribute("style", "display: block;")
+          setIsPreloaderVisible(false);     
+          setIsResultsVisible(false);
+          setIsNotFoundVisible(true);
         }
       });
     }
@@ -96,21 +98,15 @@ function Home(props) {
           console.log(err);
         });
     }, []);
-
-
-    let counter = 3;
     
+    const listItem = useRef(null);
+
+    useEffect(() => {
+      console.log(listItem.current)
+    }, [listItem])
+
     function handleOnShowMore() {
-      const articlesToDisplay = Math.min(articles.length, counter+3);
-      const listItem = document.querySelectorAll(".news-card-list__item");
-      for (let i = counter; i < articlesToDisplay; i++) {
-        listItem[i].setAttribute("style", "display: block;");
-      }
-      if (articlesToDisplay-counter !== 3) {
-        const showMoreButton = document.querySelector(".search-results__show-more");
-        showMoreButton.setAttribute("style", "display: none;");
-      }
-      counter = articlesToDisplay;
+      setItemListCounter(itemListCounter+3)
     }
 
     function handleArticleSave(article) {
@@ -148,10 +144,14 @@ function signOut() {
               onSignOutClick={signOut}
               onSearchSubmit={handleSearchSubmit}
               loggedin={props.loggedIn}
+              isOpen={isHeaderPopupOpen}
+              onClose={closeAllPopups}
+              onMenuClick={handleHeaderPopup}
+              inputRef={inputRef}
             />
-            <Preloader />
-            <ResultNotFound isNotFound={isNotFound} />
-            <SearchResults loggedIn={props.loggedIn} articles={articles} onShowMoreClick={handleOnShowMore}  onSigninClick={handleSigninClick} onArticleAdd={handleArticleSave} onArticleDel={handleArticleDel} />
+            <Preloader isPreloaderVisible={isPreloaderVisible}/>
+            <ResultNotFound isNotFoundVisible={isNotFoundVisible} isNotFound={isNotFound} />
+            <SearchResults itemListCounter={itemListCounter} itemRef={listItem} isResultsVisible={isResultsVisible} loggedIn={props.loggedIn} articles={articles} onShowMoreClick={handleOnShowMore}  onSigninClick={handleSigninClick} onArticleAdd={handleArticleSave} onArticleDel={handleArticleDel} />
             <About aboutTitle={"About the author"} 
             aboutDescription={"This block describes the project author. Here you should indicate your name, what you do, and which development technologies you know. "} 
             aboutExpertise={"You can also talk about your experience with Practicum, what you learned there, and how you can help potential customers."} />

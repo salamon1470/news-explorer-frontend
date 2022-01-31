@@ -1,4 +1,4 @@
-const customFetch = (url, headers) =>
+export const customFetch = (url, headers) =>
     fetch(url, headers)
     .then(res => res.ok ? res.json() : Promise.reject(`Error: ${res.status}`))
 

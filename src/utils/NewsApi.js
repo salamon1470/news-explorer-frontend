@@ -1,6 +1,4 @@
-const customFetch = (url) =>
-    fetch(url)
-    .then(res => res.ok ? res.json() : Promise.reject(`Error: ${res.status}`))
+import { customFetch } from "./MainApi";
 
 const date = new Date();
 const currentDate = date.getDate();
