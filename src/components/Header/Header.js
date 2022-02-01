@@ -11,7 +11,7 @@ function Header(props) {
 
   useEffect(() => {
     const currentURL = window.location.href
-    if (currentURL === "http://localhost:3000/home" || currentURL === "http://localhost:3000/") {
+    if (currentURL === "http://localhost:3000/home" || currentURL === "http://localhost:3000/" || currentURL ==="https://www.finalnewssg.students.nomoreparties.sbs/home" || currentURL ==="https://finalnewssg.students.nomoreparties.sbs/home" || currentURL ==="https://www.finalnewssg.students.nomoreparties.sbs/" || currentURL ==="https://finalnewssg.students.nomoreparties.sbs/") {
       setIsSavedRoute(false);
       setIsHomeRoute(true);
     }

@@ -38,10 +38,12 @@ function NewsCard(props) {
               aria-label=""
               type="button"
               className={`news-card-list__button ${isMarked ? "news-card-list__button_marked" : ""}`}
-              onClick={() => { if(!isMarked) {
+              onClick={() => { if(!isMarked & props.loggedIn) {
                 props.onArticleAdd(article);
-              }  else 
-              props.onArticleDel(article);
+              } 
+              if (isMarked & props.loggedIn) {
+                props.onArticleDel(article); 
+              }
             }
             }
             >

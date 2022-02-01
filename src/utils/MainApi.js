@@ -85,6 +85,7 @@ const mainapi = new MainApi({
         authorization: `Bearer ${jwt}`,
         'Accept': 'application/json',
         'Content-Type': 'application/json',
+        'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'
     }
 });
 

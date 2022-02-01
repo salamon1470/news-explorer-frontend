@@ -2,6 +2,7 @@ import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import React, { useEffect, useRef } from "react";
 import mainapi from "../../utils/MainApi";
 import { useHistory } from "react-router-dom";
+import react from "react";
 
 function SigninPopup(props) {
   const { isOpen, onClose } = props;
@@ -61,6 +62,10 @@ function SigninPopup(props) {
     setPasswordErrorClass(false);
 }, [isOpen]);
 
+function refreshPage() {
+  window.location.reload(false);
+}
+
   function handleLoginSubmit(e) {
     e.preventDefault();
     mainapi.login(email, password)
@@ -70,7 +75,8 @@ function SigninPopup(props) {
         onClose();
         props.setLoggedIn(true);
         history.push(
-          '/home'); 
+          '/home');
+        refreshPage()
         return data;
       } else {
         return;
@@ -80,25 +86,14 @@ function SigninPopup(props) {
       if (err === "Error: 401") {
         setEmailErrorClass(true);
         setPasswordErrorClass(true);
+        setEmailErrorMessageClass(true);
+        setPasswordErrorMessageClass(true);
         errorEmailElement.current.textContent = "Incorrect email or password";
         errorPasswordElement.current.textContent = "Incorrect email or password";
       }
       console.log(err);
     })
   };
-
-  useEffect(() => {
-    const jwt = localStorage.getItem('jwt');
-    if (jwt) {
-      mainapi.checkToken(jwt)
-      .then((res) => {
-        props.setLoggedIn(true);
-        history.push(
-          '/home'); 
-        return res;
-      })
-    }
-  }, [props, props.setLoggedIn, history])
 
   return (
     <PopupWithForm

@@ -19,7 +19,7 @@ function SavedNewsHeader(props) {
 
   useEffect(() => {
     const currentURL = window.location.href
-    if (currentURL === "http://localhost:3000/saved-news") {
+    if (currentURL === "http://localhost:3000/saved-news" || currentURL ==="https://www.finalnewssg.students.nomoreparties.sbs/saved-news" || currentURL ==="https://finalnewssg.students.nomoreparties.sbs/saved-news") {
       setIsSavedRoute(true);
       setIsHomeRoute(false);
     }
@@ -27,10 +27,15 @@ function SavedNewsHeader(props) {
 
   const currentUser = React.useContext(CurrentUserContext)
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   function signOut() {
     history.push(
       '/home');
     localStorage.removeItem('jwt');
+    refreshPage();
   }
   
 

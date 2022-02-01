@@ -65,7 +65,6 @@ function Home(props) {
       setIsPreloaderVisible(true);
       setIsNotFoundVisible(false);
       const searchInput = inputRef.current.value;
-      console.log(searchInput);
       newsapi.getNews(searchInput)
       .then((res) => {
         setIsPreloaderVisible(false);
@@ -101,10 +100,6 @@ function Home(props) {
     
     const listItem = useRef(null);
 
-    useEffect(() => {
-      console.log(listItem.current)
-    }, [listItem])
-
     function handleOnShowMore() {
       setItemListCounter(itemListCounter+3)
     }
@@ -128,7 +123,7 @@ function Home(props) {
   .catch((err) => {
     console.log(err);
   });
-} 
+}
 
 function signOut() {
   localStorage.removeItem('jwt');
