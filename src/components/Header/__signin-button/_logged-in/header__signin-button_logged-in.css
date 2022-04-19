@@ -1,0 +1,8 @@
+.header__signin-button_logged-in {
+    background: url(/src/images/homelogout.png);
+    background-position-x: 85%;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+    padding-left: 22px;
+}

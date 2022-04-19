@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import MobileHeaderPopup from "../MobileHeaderPopup/MobileHeaderPopup";
 
 function SavedNewsHeader(props) {
   const [isHeaderPopupOpen, setIsHeaderPopupOpen] = React.useState(false);
   const [isHomeRoute, setIsHomeRoute] = React.useState(false);
   const [isSavedRoute, setIsSavedRoute] = React.useState(false);
+  const history = useHistory();
   
   function handleHeaderPopup() {
     setIsHeaderPopupOpen(true);
@@ -17,13 +19,24 @@ function SavedNewsHeader(props) {
 
   useEffect(() => {
     const currentURL = window.location.href
-    console.log(currentURL)
-    if (currentURL === "http://localhost:3000/saved-news") {
+    if (currentURL === "http://localhost:3000/saved-news" || currentURL ==="https://www.finalnewssg.students.nomoreparties.sbs/saved-news" || currentURL ==="https://finalnewssg.students.nomoreparties.sbs/saved-news") {
       setIsSavedRoute(true);
       setIsHomeRoute(false);
     }
-  })
+  }, [])
 
+  const currentUser = React.useContext(CurrentUserContext)
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
+  function signOut() {
+    history.push(
+      '/home');
+    localStorage.removeItem('jwt');
+    refreshPage();
+  }
   
 
   return (
@@ -42,7 +55,8 @@ function SavedNewsHeader(props) {
         aria-label=""
         type="button"
         className="saved-news-header__logout-button"
-        >Elise </button>
+        onClick={() => {signOut()}}
+        >{currentUser.name}</button>
       </div>
     </header>
   );

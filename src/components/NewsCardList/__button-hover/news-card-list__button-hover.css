@@ -16,3 +16,7 @@
     border-radius: 8px;
     box-shadow: 0px 10px 22px rgba(59, 74, 116, 0.1);
 }
+
+.news-card-list__button-hover:hover {
+    cursor: pointer;
+}

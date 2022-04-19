@@ -1,10 +1,10 @@
 import SavedNewsCardList from "../SavedNewsCardList/SavedNewsCardList"
 
-function SavedNewsCards() {
+function SavedNewsCards(props) {
 
     return (
         <section className="saved-news-cards">
-            <SavedNewsCardList />
+            <SavedNewsCardList onArticleDel={props.onArticleDel} articles={props.articles} />
         </section>
     )
 }
